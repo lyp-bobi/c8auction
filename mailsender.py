@@ -8,9 +8,10 @@ import sys,io
 
 
 def sendmail(s):
-    filters=['']
+    filters=['this is just for test']
     for filter in filters:
         if s.find(filter)!=-1:
+            print("find"+filter)
             return
 
     print(s)

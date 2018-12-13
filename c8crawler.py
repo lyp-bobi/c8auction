@@ -11,6 +11,7 @@ if __name__ == '__main__':
     previousName=""
     previousPrice=""
     i=1
+    print("task started")
     while(True):
         url = "https://www.mercari.com/jp/search/?sort_order=created_desc&keyword=%E5%B0%BA%E5%85%AB&category_root=&brand_name=&brand_id=&size_group=&price_min=&price_max="
         headers = {
@@ -38,8 +39,9 @@ if __name__ == '__main__':
         c8=c8Parser()
         c8.feed(content.decode('utf-8'))
 
-        if c8.firstc8name !=previousName and i != 1:
-            sendmail(c8.firstc8name+" appears, with price "+ str(c8.firstc8price))
+        if c8.firstc8name !=previousName:
+            if i!=1:
+                sendmail(c8.firstc8name+" appears, with price "+ str(c8.firstc8price))
             previousName=c8.firstc8name
         i+=1
         time.sleep(300)
