@@ -22,11 +22,10 @@ def sendmail(s):
     sender = '13216896429@163.com'
     receiver = ['13216896429@163.com']
 
-    subject = 'New Auction Alert'
     # subject=Header(subject, 'utf-8').encode()
 
     msg = MIMEMultipart('mixed')
-    msg['Subject'] = subject
+    msg['Subject'] = s
     msg['From'] = '13216896429@163.com'
     msg['To'] = '13216896429@163.com'
     # msg['To'] = ";".join(receiver)
